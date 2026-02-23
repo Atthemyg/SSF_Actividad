@@ -37,6 +37,7 @@ for file in *; do
     if [ -f "$file" ] && [ ! -s "$file" ]; then
         mv "$file" VACIOS/
         echo "$file se ha movido a VACIOS"
+        ((vacio_count++))
     fi
 done
 
@@ -45,6 +46,7 @@ for file in *.jpg *.png *.gif; do
     if [ -f "$file" ]; then
         mv "$file" IMGS/
         echo "$file se ha movido a IMGS"
+        ((img_count++))
     fi
 done
 
@@ -53,6 +55,7 @@ for file in *.docx *.odt; do
     if [ -f "$file" ]; then
         mv "$file" DOCS/
         echo "$file se ha movido a DOCS"
+        ((doc_count++))
     fi
 done
 
@@ -61,6 +64,7 @@ for file in *.txt; do
     if [ -f "$file" ]; then
         mv "$file" TXTS/
         echo "$file se ha movido a TXTS"
+        ((txt_count++))
     fi
 done
 
@@ -69,7 +73,21 @@ for file in *.pdf; do
     if [ -f "$file" ]; then
         mv "$file" PDFS/
         echo "$file se ha movido a PDFS"
+        ((pdf_count++))
+    fi
+done
+
+#CONTAR CARPETAS VACÍAS
+for dir in */; do
+    if [ -d "$dir" ] && [ -z "$(ls -A "$dir")" ]; then
+        ((empty_dir_count++))
     fi
 done
 
 echo "Limpieza completada"
+echo "Se han movido $img_count imágenes"
+echo "Se han movido $doc_count documentos"
+echo "Se han movido $txt_count archivos de texto"
+echo "Se han movido $pdf_count PDFs"
+echo "Se encontraron $vacio_count archivos vacíos"
+echo "Se encontraron $empty_dir_count carpetas vacías"

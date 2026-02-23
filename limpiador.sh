@@ -94,6 +94,15 @@ echo "Se encontraron $dirvacio_count carpetas vacías"
 
 
 if [ "$vacio_count" -gt 0 ] || [ "$dirvacio_count" -gt 0 ]; then
+
+    echo "Archivos vacíos:"
+    find . -type f -empty
+
+    echo
+    echo "Carpetas vacías:"
+    find . -type d -empty
+
+    echo
     echo -n "¿Deseas eliminar los elementos vacíos? (s/n): "
     read opcion
 

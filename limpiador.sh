@@ -14,54 +14,44 @@ txt_count=0
 pdf_count=0
 vacio_count=0
 
-#MOVER ARCHIVOS
-for f in *; do
-    echo "Procesando $f"
-
-    if [ -f $f ]; then                # Verifica que es archivo
-    
-    case $f in 
-    
-    *.jpg *.png *.gif)
-    mv $f "IMGS"
-    ((img_count++))
-    echo -n "Movido a IMGS"
-    ;;
-
-    *.docx *.odt)
-    mv $f "DOCS"
-    ((doc_count++))
-    echo -n "Movido a DOCS"
-    ;;
-    *.txt)
-    mv $f "TXTS"
-    ((txt_count++))
-    echo -n "Movido a TXTS"
-    ;;
-    *.pdf)
-    mv $f "PDFS"
-    ((pdf_count++))
-    echo -n "Movido a PDFS"
-    ;;
-
-    *)
-    if [ ! -f $f ]; then               # Verificar archivos vacíos
-    mv $f "VACIOS"
-    ((vacio_count++))
-    echo -n "Movido a VACIOS"
-    
+#MOVER ARCHIVOS VACIOS
+for file in *; do
+    if [ -f "$file" ] && [ ! -s "$file" ]; then
+        mv "$file" VACIOS/
+        echo "$file se ha movido a VACIOS"
     fi
 done
-    
 
+#MOVER IMÁGENES
+for file in *.jpg *.png *.gif; do
+    if [ -f "$file" ]; then
+        mv "$file" IMGS/
+        echo "$file se ha movido a IMGS"
+    fi
+done
 
+#MOVER DOCUMENTOS
+for file in *.docx *.odt; do
+    if [ -f "$file" ]; then
+        mv "$file" DOCS/
+        echo "$file se ha movido a DOCS"
+    fi
+done
 
+#MOVER TXTS
+for file in *.txt; do
+    if [ -f "$file" ]; then
+        mv "$file" TXTS/
+        echo "$file se ha movido a TXTS"
+    fi
+done
 
+#MOVER PDFS
+for file in *.pdf; do
+    if [ -f "$file" ]; then
+        mv "$file" PDFS/
+        echo "$file se ha movido a PDFS"
+    fi
+done
 
-
-#echo "Procesando $f"
-#done
-
-#OTRO
-#for archivo in *
-#do echo "====>>> $archivo"
+echo "Limpieza completada"

@@ -5,7 +5,6 @@ DIR="."
 
 if [[ -z "$1" ]]; then
     echo "Asumimos directorio actual como directorio de trabajo."
-
 elif 
     #VERIFICAR QUE EL DIRECTORIO EXISTE
     [[ ! -d "$DIR" ]]; then

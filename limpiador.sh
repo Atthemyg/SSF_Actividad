@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+#CONTROL DE ERRORES
+set -euo pipefail
+
 #VERIFICAR SI SE PASÓ UN DIRECTORIO COMO PARÁMETRO
 DIR="."
 

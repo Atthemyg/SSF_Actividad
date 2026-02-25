@@ -1,3 +1,5 @@
+# ACTIVIDAD 1
+
 ## 📋 Contexto
 ¿Alguna vez has mirado tu carpeta de Descargas o tu Escritorio y has sentido que el caos ha ganado la batalla? Archivos sueltos, PDFs mezclados con imágenes y carpetas vacías que no sirven para nada.
 
@@ -24,3 +26,7 @@ Tu misión en esta tarea es crear una herramienta de automatización en Bash (un
 4. Incluye una opción para que al final si hay algún archivo o carpeta vacía te pregunte si deseas eliminarlos tipo sí/no.
    
 5. Mejora la opción del punto 5 haciendo que te muestre en una lista los archivos y carpetas vacías antes de confirmar eliminación tipo: "Archivos vacíos: vacio1.txt, vacio2.txt...
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+# ACTIVIDAD 2

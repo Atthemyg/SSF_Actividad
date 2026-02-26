@@ -3,6 +3,7 @@
 #CONTROL DE ERRORES
 set -euo pipefail
 
+#LISTA LAS OPCIONES
 echo "1. Espacio libre en disco (%)"
 echo "2. Espacio libre (tamaño)"
 echo "3. Usuario actual y nombre de la máquina"
@@ -13,6 +14,7 @@ echo
 read OPCION
 echo
 
+#MUESTRA LA INFORMACIÓN DEPENDIENDO DE LA OPCIÓN ELEGIDA
 if [ "$OPCION" = "1" ]; then
   df -h
 elif [ "$OPCION" = "2" ]; then

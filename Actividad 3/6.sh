@@ -5,11 +5,9 @@ set -euo pipefail
 
 echo -n "Base: "
 read BASE
-echo
 
 echo -n "Altura: "
 read ALTURA
-echo
 
 AREA=$(( BASE * ALTURA ))
 

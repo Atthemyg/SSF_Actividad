@@ -16,9 +16,9 @@ echo
 
 #MUESTRA LA INFORMACIÓN DEPENDIENDO DE LA OPCIÓN ELEGIDA
 if [ "$OPCION" = "1" ]; then
-  df -h
+  df -h --output=source,pcent | column -t    #--output le dice a df que solo muestre esas columnas
 elif [ "$OPCION" = "2" ]; then
-  df -h
+  df -h --output=source,avail | column -t
 elif [ "$OPCION" = "3" ]; then
   echo $USER
   hostname

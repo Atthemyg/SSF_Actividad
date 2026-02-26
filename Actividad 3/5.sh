@@ -8,8 +8,10 @@ echo "2. Espacio libre (tamaño)"
 echo "3. Usuario actual y nombre de la máquina"
 echo "4. Número de usuarios en la máquina"
 echo "5. Espacio usado en tu carpeta"
+echo
 
 read OPCION
+echo
 
 if [ "$OPCION" = "1" ]; then
   df -h

@@ -6,7 +6,7 @@ set -euo pipefail
 ALTURA_CM=$1
 PESO=$2
 
-IMC=$(( PESO / (ALTURA_CM * ALTURA_CM) ))
+IMC=$(( PESO * 10000 / (ALTURA_CM * ALTURA_CM) ))
 
 echo "IMC: $IMC"
 

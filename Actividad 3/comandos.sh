@@ -18,7 +18,7 @@ echo
 if [ "$OPCION" = "1" ]; then
   df -h --output=source,pcent | column -t    #--output le dice a df que solo muestre esas columnas
 elif [ "$OPCION" = "2" ]; then
-  df -h --output=source,avail | column -t
+  df -h --output=source,avail | column -t    #column -t ordena la salida en forma de tabla alineada
 elif [ "$OPCION" = "3" ]; then
   echo $USER
   hostname
